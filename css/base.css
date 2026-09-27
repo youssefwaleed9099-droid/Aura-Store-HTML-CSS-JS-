@@ -1,0 +1,373 @@
+/* Reset + varaibles + Typography */
+
+/* ============================================
+   BASE.CSS — Variables, Reset, Typography
+   ============================================ */
+
+/* ============ 1. Google Fonts ============ */
+/* @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"); */
+
+/* ============ 2. CSS Variables ============ */
+:root {
+  /* -------- Colors -------- */
+  /* Surfaces */
+  --surface: #faf9f6;
+  --surface-dim: #dbdad7;
+  --surface-bright: #faf9f6;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f4f3f1;
+  --surface-container: #efeeeb;
+  --surface-container-high: #e9e8e5;
+  --surface-container-highest: #e3e2e0;
+
+  /* Text */
+  --on-surface: #1a1c1a;
+  --on-surface-variant: #45464c;
+  --inverse-surface: #2f312f;
+  --inverse-on-surface: #f2f1ee;
+
+  /* Primary */
+  --primary: #000000;
+  --on-primary: #ffffff;
+  --primary-container: #141b2b;
+  --on-primary-container: #7d8497;
+
+  /* Secondary (Emerald) */
+  --secondary: #006c4a;
+  --on-secondary: #ffffff;
+  --secondary-container: #82f5c1;
+  --on-secondary-container: #00714e;
+
+  /* Tertiary (Indigo) */
+  --tertiary: #000000;
+  --on-tertiary: #ffffff;
+  --tertiary-container: #0f0069;
+  --on-tertiary-container: #7671ff;
+
+  /* Error */
+  --error: #ba1a1a;
+  --on-error: #ffffff;
+  --error-container: #ffdad6;
+  --on-error-container: #93000a;
+
+  /* Outlines */
+  --outline: #76777d;
+  --outline-variant: #c6c6cd;
+
+  /* Legacy helpers (optional - for convenience) */
+  --ink: #111827; /* main dark text/buttons */
+  --ink-hover: #1f2937;
+  --border: #e5e7eb; /* main 1px stroke */
+  --border-light: #f3f4f6;
+  --border-hover: #d1d5db;
+  --text-muted: #4b5563; /* secondary text */
+  --text-subtle: #6b7280; /* tertiary text */
+  --placeholder: #9ca3af;
+
+  /* Accent states */
+  --success-bg: #ecfdf5;
+  --success-text: #047857;
+  --danger-bg: #fef2f2;
+  --danger-text: #b91c1c;
+  --neutral-bg: #f3f4f6;
+  --neutral-text: #374151;
+
+  /* -------- Typography -------- */
+  --font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+
+  /* Font Sizes */
+  --fs-display-hero: 56px;
+  --fs-display-hero-mobile: 36px;
+  --fs-headline-xl: 40px;
+  --fs-headline-xl-mobile: 28px;
+  --fs-headline-lg: 28px;
+  --fs-headline-md: 22px;
+  --fs-headline-sm: 18px;
+  --fs-body-lg: 17px;
+  --fs-body-md: 15px;
+  --fs-body-sm: 13px;
+  --fs-label-md: 14px;
+  --fs-label-sm: 12px;
+  --fs-label-badge: 11px;
+
+  /* Font Weights */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* Line Heights */
+  --lh-tight: 1.15;
+  --lh-snug: 1.3;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.6;
+
+  /* Letter Spacing */
+  --ls-tight: -0.03em;
+  --ls-snug: -0.02em;
+  --ls-normal: 0em;
+  --ls-wide: 0.01em;
+  --ls-wider: 0.02em;
+  --ls-widest: 0.04em;
+
+  /* -------- Radius -------- */
+  --radius-sm: 0.25rem; /* 4px */
+  --radius: 0.5rem; /* 8px */
+  --radius-md: 0.75rem; /* 12px */
+  --radius-lg: 1rem; /* 16px */
+  --radius-xl: 1.5rem; /* 24px */
+  --radius-full: 9999px;
+
+  /* -------- Spacing -------- */
+  --space-xs: 0.25rem; /* 4px */
+  --space-sm: 0.5rem; /* 8px */
+  --space-md: 1rem; /* 16px */
+  --space-lg: 1.5rem; /* 24px */
+  --space-xl: 2.5rem; /* 40px */
+
+  /* Layout */
+  --gutter: 1.5rem;
+  --gutter-tablet: 1.25rem;
+  --gutter-mobile: 1rem;
+  --margin: 3rem;
+  --margin-tablet: 2rem;
+  --margin-mobile: 1.25rem;
+  --max-width: 1440px;
+
+  /* -------- Shadows -------- */
+  --shadow-sm:
+    0 1px 3px 0 rgba(17, 24, 39, 0.04), 0 1px 2px -1px rgba(17, 24, 39, 0.02);
+
+  --shadow-md:
+    0 10px 15px -3px rgba(17, 24, 39, 0.05),
+    0 4px 6px -4px rgba(17, 24, 39, 0.02);
+
+  --shadow-lg:
+    0 20px 25px -5px rgba(17, 24, 39, 0.08),
+    0 8px 10px -6px rgba(17, 24, 39, 0.03);
+
+  /* -------- Transitions -------- */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+}
+
+/* ============ 3. Reset ============ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--fs-body-md);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-normal);
+  color: var(--on-surface);
+  background-color: var(--surface);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* ============ 4. Typography ============ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-snug);
+  letter-spacing: -0.01em;
+  color: var(--on-surface);
+}
+
+h1 {
+  font-size: var(--fs-display-hero);
+  font-weight: var(--fw-bold);
+  line-height: 64px;
+  letter-spacing: var(--ls-tight);
+}
+
+h2 {
+  font-size: var(--fs-headline-xl);
+  line-height: 48px;
+  letter-spacing: var(--ls-snug);
+}
+
+h3 {
+  font-size: var(--fs-headline-lg);
+  line-height: 36px;
+}
+
+h4 {
+  font-size: var(--fs-headline-md);
+  line-height: 30px;
+}
+
+h5 {
+  font-size: var(--fs-headline-sm);
+  line-height: 26px;
+}
+
+p {
+  font-size: var(--fs-body-md);
+  line-height: var(--lh-relaxed);
+  color: var(--text-muted);
+}
+
+small {
+  font-size: var(--fs-body-sm);
+  color: var(--text-subtle);
+}
+
+strong {
+  font-weight: var(--fw-semibold);
+}
+
+/* Utility classes for typography */
+.text-label {
+  font-size: var(--fs-label-md);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-wide);
+}
+
+.text-label-sm {
+  font-size: var(--fs-label-sm);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+}
+
+.text-badge {
+  font-size: var(--fs-label-badge);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+}
+
+/* ============ 5. Layout Helpers ============ */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--margin-mobile);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-inline: var(--margin-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-inline: var(--margin);
+  }
+}
+
+/* Screen-reader only (accessibility) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ============ 6. Focus Styles (a11y) ============ */
+:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px var(--surface),
+    0 0 0 4px var(--tertiary-container);
+  border-radius: var(--radius);
+}
+
+/* ============ 7. Selection ============ */
+::selection {
+  background: var(--primary);
+  color: var(--on-primary);
+}
+
+/* ============ 8. Scrollbar (optional) ============ */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--surface-container-low);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--outline-variant);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--outline);
+}
+
+/* ============ 9. Responsive Typography ============ */
+@media (max-width: 767px) {
+  h1 {
+    font-size: var(--fs-display-hero-mobile);
+    line-height: 44px;
+    letter-spacing: -0.025em;
+  }
+
+  h2 {
+    font-size: var(--fs-headline-xl-mobile);
+    line-height: 36px;
+    letter-spacing: -0.015em;
+  }
+}

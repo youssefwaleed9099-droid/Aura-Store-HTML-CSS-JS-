@@ -1,0 +1,665 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/components.css" />
+    <link rel="stylesheet" href="./css/home.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
+      integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:wght@300;400;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>AURA Store</title>
+  </head>
+  <body>
+    <aside class="announcement-bar">
+      <div class="announcement-bar__group">
+        <span><i class="fa-solid fa-leaf"></i></span>
+        <span class="announcement-bar__text">
+          Complimentary worldwide carbon-neutral shipping on orders over $150 ·
+          Free 30-day returns
+        </span>
+      </div>
+      <div class="announcement-bar__links">
+        <span>USD ($)</span>
+        <span>.</span>
+        <span>Store Locator</span>
+        <span>.</span>
+        <span>Help Center</span>
+      </div>
+    </aside>
+
+    <!-- Navbar -->
+    <div class="nav-container">
+      <nav class="navbar">
+        <a href="./index.html">
+          <img src="./images/logo.png" alt="AURA Logo" />
+          <h3>AURA</h3>
+        </a>
+        <form id="navbar-form" class="navbar-form" data-search-open>
+          <input
+            type="text"
+            placeholder="Search acoustic systems, desks, essentials..."
+            readonly
+          />
+          <kbd>⌘K</kbd>
+        </form>
+        <ul class="navbar-links">
+          <li><a href="./catalog.html?category=audio">Audio & Acoustics</a></li>
+          <li>
+            <a href="./catalog.html?category=workspace">Workspace & Desk</a>
+          </li>
+          <li><a href="./catalog.html?category=home">Home Living</a></li>
+          <li><a href="./catalog.html?category=apparel">Apparel & Carry</a></li>
+          <li><a href="./catalog.html?sort=new">New Arrivals</a></li>
+          <li><a href="./catalog.html?filter=sale">Sale</a></li>
+          <li>
+            <a href="./cart.html" data-cart-link>
+              <span
+                ><i class="fa-sharp-duotone fa-light fa-bag-shopping"></i
+              ></span>
+              <span data-cart-count>0</span>
+              <span data-cart-total>$0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Search Modal -->
+    <div class="modal" data-search-modal>
+      <div class="modal__scrim" data-search-close></div>
+      <div class="modal__panel">
+        <div class="modal__header">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input
+            type="text"
+            class="modal__search-input"
+            placeholder="Search acoustic systems, desks, essentials..."
+            data-search-input
+          />
+          <button class="icon-btn" data-search-close aria-label="Close">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="modal__body" data-search-results>
+          <!-- نتائج البحث هتظهر هنا -->
+        </div>
+        <div class="modal__footer">
+          <span>Press ESC to close</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+      <section class="hero">
+        <!-- Left: Text column -->
+        <div class="hero__content">
+          <span class="hero__eyebrow">Autumn / Winter '25 Drop</span>
+
+          <h1 class="hero__title">
+            Engineered For Clarity.
+            <span class="hero__title-sub">Designed For Life.</span>
+          </h1>
+
+          <p class="hero__desc">
+            Discover the new Autumn/Winter collection of precision acoustic
+            gear, sculptural workspace modules, and minimalist living companions
+            crafted with timeless tactile restraint.
+          </p>
+
+          <div class="hero__actions">
+            <a href="#" class="btn btn--dark">
+              Explore New Arrivals
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <button class="btn btn--light" data-open-film>
+              <i class="fa-regular fa-circle-play"></i>
+              Watch Product Film (1:42)
+            </button>
+          </div>
+
+          <div class="hero__meta">
+            <span class="hero__stars">★★★★★</span>
+            <span class="hero__score">4.92 / 5</span>
+            <span class="hero__reviews">(12,480+ reviews)</span>
+            <span class="hero__sep">·</span>
+            <span class="hero__badge">
+              <i class="fa-solid fa-user-shield"></i>
+              Certified B-Corp Atelier
+            </span>
+          </div>
+        </div>
+
+        <!-- Right: Image + floating card -->
+        <div class="hero__media">
+          <img src="./images/hero_section.jpg" alt="Hero Section Image" />
+
+          <div class="hero__card">
+            <div class="hero__card-info">
+              <span class="hero__card-eyebrow">Featured Flagship</span>
+              <span class="hero__card-title">Studio One Pro Acoustic</span>
+            </div>
+            <div class="hero__card-price">
+              <span>$349</span>
+              <button
+                class="hero__card-btn"
+                aria-label="Add to cart"
+                data-add-to-cart
+                data-product-id="1"
+              >
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="why-us">
+      <p>
+        <span><i class="fa-regular fa-circle-check"></i></span>
+        4.9/5 from 12,000+ Owners
+      </p>
+      <p>
+        <span><i class="fa-solid fa-leaf"></i></span>
+        Carbon Neutral Certified
+      </p>
+      <p>
+        <span><i class="fa-regular fa-shield"></i></span>
+        2-Year Atelier Warranty
+      </p>
+      <p>
+        <span><i class="fa-regular fa-truck"></i></span>
+        Complimentary Express Courier
+      </p>
+    </div>
+
+    <!-- Products Section -->
+    <section class="categories">
+      <div class="categories-head">
+        <p class="categories__eyebrow">Archived Taxonomy</p>
+        <h2>Explore Curated Disciplines</h2>
+        <span>Zero-compromise engineering meets Scandinavian quietude</span>
+      </div>
+
+      <div class="products-grid">
+        <a href="./catalog.html">
+          <img src="./images/product1.jpg" alt="Precision Audio" />
+          <h3>Precision Audio</h3>
+          <p>18 Products</p>
+        </a>
+
+        <a href="./catalog.html">
+          <img src="./images/product2.jpg" alt="Acoustics Studio" />
+          <h3>Acoustic Studio</h3>
+          <p>12 Products</p>
+        </a>
+
+        <a href="./catalog.html">
+          <img src="./images/product3.jpg" alt="Minimal Desk" />
+          <h3>Minimal Desk</h3>
+          <p>24 Products</p>
+        </a>
+
+        <a href="./catalog.html">
+          <img src="./images/product4.jpg" alt="Ergonomics" />
+          <h3>Ergonomics</h3>
+          <p>9 Products</p>
+        </a>
+
+        <a href="./catalog.html">
+          <img src="./images/product5.jpg" alt="Everyday Carry" />
+          <h3>Everyday Carry</h3>
+          <p>31 Products</p>
+        </a>
+
+        <a href="./catalog.html">
+          <img src="./images/product6.jpg" alt="Ambient Light" />
+          <h3>Ambient Light</h3>
+          <p>14 Products</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="products">
+      <div class="products__grid">
+        <!-- Product 1 -->
+        <article class="product-card" data-product-id="1">
+          <div class="product-card__media">
+            <div class="product-card__badges">
+              <span class="badge badge--dark">Staff Pick</span>
+              <span class="badge badge--sale">Sale −12%</span>
+            </div>
+
+            <img src="./images/product7.jpg" alt="AURA Studio One Wireless" />
+          </div>
+
+          <div class="product-card__body">
+            <div class="product-card__meta">
+              <span class="product-card__category">Wireless Audio</span>
+              <span class="product-card__rating">
+                <i class="fa-solid fa-star"></i> 4.9 (428)
+              </span>
+            </div>
+
+            <h3 class="product-card__title">AURA Studio One Wireless</h3>
+
+            <div class="product-card__colors">
+              <span class="color-dot" style="background: #1a1a1a"></span>
+              <span class="color-dot" style="background: #c9c9c9"></span>
+              <span class="color-dot" style="background: #b8a99a"></span>
+            </div>
+
+            <div class="product-card__footer">
+              <div class="product-card__price">
+                <span class="price-current">$349</span>
+                <span class="price-old">$399</span>
+              </div>
+              <button class="btn btn--dark" data-add-to-cart>Quick Add</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product 2 -->
+        <article class="product-card" data-product-id="2">
+          <div class="product-card__media">
+            <div class="product-card__badges">
+              <span class="badge badge--light">Best Seller</span>
+            </div>
+
+            <img src="./images/product8.jpg" alt="Horizon Solid Oak Shelf" />
+          </div>
+
+          <div class="product-card__body">
+            <div class="product-card__meta">
+              <span class="product-card__category">Workspace</span>
+              <span class="product-card__rating">
+                <i class="fa-solid fa-star"></i> 4.8 (215)
+              </span>
+            </div>
+
+            <h3 class="product-card__title">Horizon Solid Oak Shelf</h3>
+
+            <div class="product-card__colors">
+              <span
+                class="color-dot color-dot--active"
+                style="background: #d4c4a8"
+              ></span>
+              <span class="color-dot" style="background: #5a3a24"></span>
+            </div>
+
+            <div class="product-card__footer">
+              <div class="product-card__price">
+                <span class="price-current">$189</span>
+              </div>
+              <button class="btn btn--dark" data-add-to-cart>
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product 3 -->
+        <article class="product-card" data-product-id="3">
+          <div class="product-card__media">
+            <div class="product-card__badges">
+              <span class="badge badge--new">New Arrival</span>
+            </div>
+
+            <img src="./images/product9.jpg" alt="Lumina Arc Ambient Lamp" />
+          </div>
+
+          <div class="product-card__body">
+            <div class="product-card__meta">
+              <span class="product-card__category">Lighting</span>
+              <span class="product-card__rating">
+                <i class="fa-solid fa-star"></i> 5.0 (89)
+              </span>
+            </div>
+
+            <h3 class="product-card__title">Lumina Arc Ambient Lamp</h3>
+
+            <div class="product-card__tags">
+              <span class="tag">Dimmable 1800K–4000K</span>
+            </div>
+
+            <div class="product-card__footer">
+              <div class="product-card__price">
+                <span class="price-current">$145</span>
+              </div>
+              <button class="btn btn--dark" data-add-to-cart>
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product 4 -->
+        <article class="product-card" data-product-id="4">
+          <div class="product-card__media">
+            <div class="product-card__badges">
+              <span class="badge badge--warning">Only 3 Left</span>
+            </div>
+
+            <img src="./images/product10.jpg" alt="Aeroform Wool Armchair" />
+          </div>
+
+          <div class="product-card__body">
+            <div class="product-card__meta">
+              <span class="product-card__category">Home Living</span>
+              <span class="product-card__rating">
+                <i class="fa-solid fa-star"></i> 4.9 (164)
+              </span>
+            </div>
+
+            <h3 class="product-card__title">Aeroform Wool Armchair</h3>
+
+            <div class="product-card__tags">
+              <span class="tag">Danish Kvadrat® Wool</span>
+            </div>
+
+            <div class="product-card__footer">
+              <div class="product-card__price">
+                <span class="price-current">$780</span>
+              </div>
+              <button class="btn btn--dark" data-add-to-cart>
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="engineering-manifesto">
+      <div class="engineering-manifesto__media">
+        <img
+          src="./images/imageNum11.jpg"
+          alt="Acoustic Architecture Series — Exploded View"
+        />
+        <div class="engineering-manifesto__caption">
+          <span>Custom 40mm Beryllium Drivers</span>
+          <span class="badge">THD &lt; 0.05%</span>
+        </div>
+      </div>
+
+      <div class="engineering-manifesto__content">
+        <p class="engineering-manifesto__eyebrow">Engineering Manifesto</p>
+        <h2 class="engineering-manifesto__title">
+          The Acoustic Architecture Series. Sound Meets Pure Sculpture.
+        </h2>
+        <p class="engineering-manifesto__description">
+          Milled from single blocks of aerospace-grade 6000-series anodized
+          aluminum and lined with natural German sheep's wool felt...
+        </p>
+
+        <dl class="engineering-manifesto__stats">
+          <div>
+            <dt>6063</dt>
+            <dd>Aircraft Alloy</dd>
+          </div>
+          <div>
+            <dt>0.05%</dt>
+            <dd>Total Distortion</dd>
+          </div>
+          <div>
+            <dt>48 Hrs</dt>
+            <dd>Continuous Battery</dd>
+          </div>
+        </dl>
+
+        <div class="engineering-manifesto__actions">
+          <a href="#" class="btn btn--light">
+            Discover Engineering <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="#" class="link-underline">Read Technical Whitepaper</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testmonials -->
+    <section class="testimonials">
+      <div class="testimonials-section-card">
+        <!-- Card 1 -->
+        <div class="card">
+          <span><i class="fa-regular fa-star"></i></span>
+          <h3>30-Day In-Home Trial</h3>
+          <p>
+            Live with our objects in your personal sanctuary. If not enchanted,
+            return effortlessly.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+          <span><i class="fa-solid fa-phone-volume"></i></span>
+          <h3>Lifetime Concierge</h3>
+          <p>
+            Dedicated hardware experts standing by for setup, repair, and tuning
+            guidance.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+          <span><i class="fa-solid fa-tree"></i></span>
+          <h3>Carbon-Neutral Freight</h3>
+          <p>
+            100% of transport emissions measured and counterbalanced via
+            verified forestry offsets.
+          </p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card">
+          <span><i class="fa-regular fa-cloud"></i></span>
+          <h3>256-Bit Encryption</h3>
+          <p>
+            Frictionless checkouts guarded by biometric validation and
+            enterprise security.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sustainability -->
+
+    <section class="sustainability" aria-labelledby="sustainability-title">
+      <span class="sustainability__eyebrow">Circular Atelier</span>
+      <h2 id="sustainability-title" class="sustainability__title">
+        Crafted for decades of tactile joy, not seasonal disposal.
+      </h2>
+      <p class="sustainability__description">
+        By rejecting planned obsolescence, every AURA hardware object features
+        modular repairability, fully recyclable unibodies, and open-standard
+        components. When you invest in AURA, you cast a decisive vote for
+        deliberate longevity.
+      </p>
+      <div class="sustainability__actions">
+        <a href="#" class="btn btn--dark">
+          Explore Our Sustainability Ledger
+        </a>
+        <small class="sustainability__caption">
+          Annual Sustainability Audit 2024 · Verified Clean
+        </small>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer__inner">
+        <!-- ===== Top Section: 5 Columns ===== -->
+        <div class="footer__grid">
+          <!-- Column 1: Newsletter -->
+          <div class="footer__col footer__col--newsletter">
+            <h3 class="footer__heading">Join the AURA Collective</h3>
+            <p class="footer__desc">
+              Receive curated releases, architectural essays, and 15% off your
+              inaugural commission.
+            </p>
+            <form class="footer__form">
+              <input
+                type="email"
+                placeholder="Enter your email address"
+                required
+                aria-label="Email address"
+              />
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+
+          <!-- Column 2: Shop -->
+          <div class="footer__col">
+            <h4 class="footer__col-title">Shop</h4>
+            <ul>
+              <li>
+                <a href="./catalog.html?category=audio"
+                  >Audio &amp; Acoustics</a
+                >
+              </li>
+              <li>
+                <a href="./catalog.html?category=workspace"
+                  >Workspace &amp; Desk</a
+                >
+              </li>
+              <li><a href="./catalog.html?category=home">Home Living</a></li>
+              <li>
+                <a href="./catalog.html?category=apparel"
+                  >Apparel &amp; Carry</a
+                >
+              </li>
+              <li><a href="./catalog.html?sort=new">New Arrivals</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Support -->
+          <div class="footer__col">
+            <h4 class="footer__col-title">Support</h4>
+            <ul>
+              <li><a href="#">Order Status</a></li>
+              <li><a href="#">Shipping &amp; Logistics</a></li>
+              <li><a href="#">Returns &amp; Exchanges</a></li>
+              <li><a href="#">Product Care Guide</a></li>
+              <li><a href="#">Warranty &amp; Repairs</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Company -->
+          <div class="footer__col">
+            <h4 class="footer__col-title">Company</h4>
+            <ul>
+              <li><a href="#">Atelier Journal</a></li>
+              <li><a href="#">Design Ethos</a></li>
+              <li><a href="#">Flagship Studios</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Press Inquiries</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 5: Sustainability -->
+          <div class="footer__col">
+            <h4 class="footer__col-title">Sustainability</h4>
+            <ul>
+              <li><a href="#">Carbon Ledger</a></li>
+              <li><a href="#">B-Corp Report</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Accessibility</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ===== Bottom Bar ===== -->
+        <div class="footer__bottom">
+          <div class="footer__bottom-left">
+            <span class="tag tag--dark">B-Corp Certified</span>
+            <span class="tag tag--green">100% Carbon Neutral</span>
+            <small class="footer__copyright">
+              &copy; 2025 AURA Atelier Inc. All rights reserved.
+            </small>
+          </div>
+
+          <div class="footer__bottom-right">
+            <span class="pay-badge">Apple Pay</span>
+            <span class="pay-badge">Visa</span>
+            <span class="pay-badge">Mastercard</span>
+            <span class="pay-badge">Amex</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Toast Container -->
+
+    <div class="toast-container" id="toast-container" data-toast-container></div>
+
+    <!-- ============================================
+     FILM MODAL
+     ============================================ -->
+    <div class="film-modal" data-film-modal>
+      <!-- Backdrop -->
+      <div class="film-modal__scrim" data-film-close></div>
+
+      <!-- Panel -->
+      <div class="film-modal__panel">
+        <!-- Header -->
+        <div class="film-modal__header">
+          <div class="film-modal__title-group">
+            <span class="film-modal__eyebrow">AURA Studio One</span>
+            <h3 class="film-modal__title">Engineering Process (1:42)</h3>
+          </div>
+          <button
+            class="icon-btn"
+            data-film-close
+            aria-label="Close film modal"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <!-- Video / Poster Area -->
+        <div class="film-modal__media">
+          <img
+            src="./images/product1.jpg"
+            alt="AURA Studio One — Engineering Process Film"
+            class="film-modal__poster"
+          />
+          <div class="film-modal__overlay"></div>
+          <button class="film-modal__play" aria-label="Play film">
+            <i class="fa-solid fa-play"></i>
+          </button>
+          <span class="film-modal__hint"
+            >Click to play high-definition stream</span
+          >
+        </div>
+
+        <!-- Footer -->
+        <div class="film-modal__footer">
+          <span class="film-modal__meta">
+            <i class="fa-regular fa-clock"></i>
+            1 min 42 sec · Directed by Atelier Studio
+          </span>
+          <span class="film-modal__meta">
+            <i class="fa-solid fa-closed-captioning"></i>
+            CC Available
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/data.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/home.js"></script>
+  </body>
+</html>
