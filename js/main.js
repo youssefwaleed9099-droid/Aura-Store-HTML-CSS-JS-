@@ -229,6 +229,20 @@ function openSearchModal() {
   const modal = document.querySelector("[data-search-modal]");
   modal.classList.add("is-open");
 
+  document.body.style.overflow = "hidden";
+}
+
+function closeSearchModal() {
+  const modal = document.querySelector("[data-search-modal]");
+  modal.classList.remove("is-open");
+
+  document.body.style.overflow = "";
+}
+
+function openFilmModal() {
+  const modal = document.querySelector("[data-film-modal]");
+  modal.classList.add("is-open");
+
   const searchInput = document.querySelector("[data-search-input]");
 
   searchInput.value = "";
@@ -237,8 +251,8 @@ function openSearchModal() {
   document.body.style.overflow = "hidden";
 }
 
-function closeSearchModal() {
-  const modal = document.querySelector("[data-search-modal]");
+function closeFilmModal() {
+  const modal = document.querySelector("[data-film-modal]");
   modal.classList.remove("is-open");
 
   document.body.style.overflow = "";
@@ -302,19 +316,48 @@ function initSearchModal() {
     item.addEventListener("click", closeSearchModal);
   });
 
-  document.addEventListener("keydown", (event) => {
-    if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "k") {
-      event.preventDefault();
-      openSearchModal();
-    }
+  document.addEventListener("keydown", initGlobalKeyboard);
+}
 
-    // Escape
-    if (event.key === "Escape") {
-      closeSearchModal();
+function initFilmModal() {
+  const filmOpen = document.querySelectorAll("[data-open-film]");
+  filmOpen.forEach((film) => film.addEventListener("click", openFilmModal));
+
+  const closeFilm = document.querySelectorAll("[data-film-close]");
+  closeFilm.forEach((film) => film.addEventListener("click", closeFilmModal));
+
+  document.addEventListener("keydown", initGlobalKeyboard);
+}
+
+function initAddToCartButtons() {
+  const cartButtons = document.querySelectorAll("[data-add-to-cart]");
+  cartButtons.forEach((btn) =>
+    btn.addEventListener("click", () => {
+      const productCard = btn.closest("[data-product-id]");
+      const productId = Number(productCard.getAttribute("data-product-id"));
+      addToCart(productId);
+      btn.textContent = '✔ Added'
+    }),
+  );
+}
+
+function initGlobalKeyboard() {
+  document.addEventListener("keydown", (e) => {
+    closeFilmModal();
+    closeSearchModal;
+
+    if ((e.ctrlKey || e.metaKey) && e.key === "k") {
+      openFilmModal();
+      openSearchModal();
     }
   });
 }
 
-function initFilmModal() {}
-
 // Event Listener
+function init() {
+  initCartCounter();
+  initSearchModal();
+  initFilmModal();
+  initAddToCartButtons();
+  initGlobalKeyboard();
+}
